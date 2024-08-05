@@ -1,0 +1,172 @@
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #f8f9fa;
+}
+
+.logo {
+  top: 30px;
+  left: 50px;
+  width: 211px;
+  /* height: 48px; */
+}
+
+/* .sidebar {
+    height: 100vh;
+    position: fixed;
+  } */
+
+.actives {
+  /* top: 30px;
+    left: 601px;
+    width: 122px;
+    height: 41px; */
+  background: #01f0d0 0% 0% no-repeat;
+  border-radius: 41px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+  /* Optional: Adjust z-index if needed to ensure proper stacking */
+  /* z-index: 1; */
+}
+
+.navbar {
+  /* top: 18px; */
+  left: 18px;
+  width: 98%;
+  /* height: 72px; */
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 70px;
+  opacity: 1;
+}
+*/ .main-content {
+  margin-top: 56px;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.patient-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.list-group-item-action {
+  cursor: pointer;
+}
+
+.side_list {
+  width: 250px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+}
+
+.side_list .active {
+  background-color: #e6f7ff;
+}
+
+.side_list .search-bar input {
+  /* margin-bottom: 1rem; */
+}
+
+.dots {
+  font-size: 1.25rem;
+  color: #072635;
+}
+
+.card-header {
+  background-color: #ffffff;
+}
+.card_native{
+  /* Layout Properties */
+
+/* UI Properties */
+/* background: #FFE6E9 0% 0% no-repeat padding-box; */
+border-radius: 12px;
+opacity: 1;
+}
+.card-bodys {
+  background-color: #F4F0FE;
+}
+.history_card{
+  /* Layout Properties */
+/* UI Properties */
+/* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
+/* background: #FFFFFF 0% 0% no-repeat padding-box; */
+border-radius: 16px;
+opacity: 1;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+.icon {
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 12px;
+  /* margin-bottom: 10px; */
+
+}
+
+.card-text {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.status {
+  /* margin-top: 10px; */
+
+  font-size: 0.9em;
+  color: gray;
+}
+
+.general {
+  border: 1px solid blue;
+}
+
+.info {
+  border-radius: 41px;
+  opacity: 1;
+  background: #01F0D0 0% 0% no-repeat padding-box;
+}
+
+.list-group-item {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.list-group-item:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: #007bff;
+}
+
+.icon {
+  border-radius: 50%
+}
+
+
+
