@@ -10,35 +10,23 @@ body {
   top: 30px;
   left: 50px;
   width: 211px;
-  /* height: 48px; */
 }
 
-/* .sidebar {
-    height: 100vh;
-    position: fixed;
-  } */
+
 
 .actives {
-  /* top: 30px;
-    left: 601px;
-    width: 122px;
-    height: 41px; */
+
   background: #01f0d0 0% 0% no-repeat;
   border-radius: 41px;
   opacity: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: relative; */
-  /* Optional: Adjust z-index if needed to ensure proper stacking */
-  /* z-index: 1; */
 }
 
 .navbar {
-  /* top: 18px; */
   left: 18px;
   width: 98%;
-  /* height: 72px; */
   background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
   background: #ffffff 0% 0% no-repeat padding-box;
   border-radius: 70px;
@@ -102,9 +90,7 @@ body {
   background-color: #e6f7ff;
 }
 
-.side_list .search-bar input {
-  /* margin-bottom: 1rem; */
-}
+
 
 .dots {
   font-size: 1.25rem;
@@ -118,10 +104,6 @@ body {
   margin-bottom: 0;
 }
 .card_native {
-  /* Layout Properties */
-
-  /* UI Properties */
-  /* background: #FFE6E9 0% 0% no-repeat padding-box; */
   border-radius: 12px;
   opacity: 1;
 }
@@ -151,9 +133,7 @@ td {
   top: 920px;
   left: 437px;
   width: 726px;
-  /* UI Properties */
   background: #f6f7f8 0% 0% no-repeat padding-box;
-  /* border-radius: 24px; */
   opacity: 1;
   padding: 15px 20px;
 }
@@ -173,10 +153,6 @@ td {
   background-color: #8c6fe6;
 }
 
-.diagnosis_details {
-  /* overflow-x: auto; */
-}
-
 .profile-card {
   height: 600px;
   width: 340px;
@@ -186,13 +162,6 @@ td {
 .history_card,
 .diagnosis_details {
   border: none;
-
-  /* Layout Properties */
-  /* UI Properties */
-  /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
-  /* background: #FFFFFF 0% 0% no-repeat padding-box; */
-  /* border-radius: 16px; */
-  /* opacity: 1; */
 }
 
 .profile-card img {
@@ -200,9 +169,6 @@ td {
   left: 1299px;
   width: 200px;
   height: 200px;
-  /* UI Properties */
-  /* background: transparent url("img/Layer 2.png") 0% 0% no-repeat padding-box; */
-  opacity: 1;
 }
 
 .profile-card h5 {
@@ -217,8 +183,6 @@ td {
 .profile-card img {
   top: 120px;
   left: 1299px;
-  /* UI Properties */
-  opacity: 1;
 }
 
 .lab_results {
@@ -324,17 +288,11 @@ td {
 .diagnostic_tr td, .card-bodys p {
   font-size: 14px;
 }
-
 .diagnostic_tr {
 overflow-x: auto;
 width: 100%;
 }
-
-/* .card-bodys p {
-  font-size: 14px;
-} */
-
-.blood{
+.blood {
   font-size: 14px;
 }
 .statuss {
@@ -349,7 +307,6 @@ width: 100%;
 .list-unstyled.spec p {
   text-align: left !important;
 }
-
 .preloader {
   margin-top: 20px
 }

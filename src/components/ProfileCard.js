@@ -9,7 +9,7 @@ import { PiDownloadSimpleBold } from "react-icons/pi";
 
 const ProfileCard = () => {
   const [patients, setPatients] = useState([]);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,14 +28,14 @@ const ProfileCard = () => {
         );
         setPatients(response.data);
       } catch (error) {
-        setError(error);
+        // setError(error);
       }
     };
 
     fetchData();
   }, []);
 
-  if (error) return <div>Error: {error.message}</div>;
+  // if (error) return <div>Error: {error.message}</div>;
 
   if (patients.length === 0) return null;
 

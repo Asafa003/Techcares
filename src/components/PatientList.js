@@ -7,7 +7,7 @@ import { BsThreeDots } from "react-icons/bs";
 const PatientList = () => {
   const [patients, setPatients] = useState([]);
   // const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(null);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const PatientList = () => {
         setPatients(response.data);
         // setLoading(false);
       } catch (error) {
-        setError(error);
+        // setError(error);
         // setLoading(false);
       }
     };
@@ -37,7 +37,7 @@ const PatientList = () => {
   }, []);
 
   // if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  // if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="card patient_list">

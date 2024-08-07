@@ -15,7 +15,6 @@ import {
 
 const NavBar = () => {
   const location = useLocation();
-  const [sideBar, setSideBar] = useState(false);
   const [active, setActive] = useState("patients");
   const [links] = useState([
     { link: "overview", path: "/overview" },
@@ -24,9 +23,6 @@ const NavBar = () => {
     { link: "message", path: "/message" },
     { link: "transactions", path: "/transactions" },
   ]);
-
-  
-  const showSideBar = () => setSideBar(!sideBar);
 
   useEffect(() => {
     const pathname = location.pathname;
@@ -47,13 +43,12 @@ const NavBar = () => {
           <img
             src={logo}
             alt="Tech.Care"
-            style={{width: "211px", height: "48px"}}
+            style={{ width: "211px", height: "48px" }}
             className="logo"
           />
         </a>
         <button
           className="navbar-toggler"
-          
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -61,7 +56,7 @@ const NavBar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon" onClick={showSideBar}></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
@@ -158,9 +153,8 @@ const NavBar = () => {
             <button
               className="btn btn-link text-decoration-none p-0"
               type="button"
-
             >
-            <BsThreeDotsVertical/>
+              <BsThreeDotsVertical />
             </button>
           </div>
         </div>

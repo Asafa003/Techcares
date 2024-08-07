@@ -10,7 +10,7 @@ import { MdOutlineArrowDropDown, MdOutlineArrowDropUp, MdOutlineKeyboardArrowDow
 
 const PatientData = () => {
   const [patients, setPatients] = useState([]);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,16 +29,14 @@ const PatientData = () => {
         );
         setPatients(response.data);
       } catch (error) {
-        setError(error);
+        // setError(error);
       }
     };
 
     fetchData();
   }, []);
 
-  if (error) return <div>Error: {error.message}</div>;
-
-  // Ensure that the data is available before rendering the component
+  // if (error) return <div>Error: {error.message}</div>;
   if (patients.length === 0) return null;
 
   return (
