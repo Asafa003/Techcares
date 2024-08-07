@@ -3,6 +3,7 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   background-color: #f8f9fa;
+  overflow: hidden;
 }
 
 .logo {
@@ -43,7 +44,7 @@ body {
   border-radius: 70px;
   opacity: 1;
 }
-*/ .main-content {
+.main-content {
   margin-top: 56px;
 }
 
@@ -51,7 +52,32 @@ body {
   display: flex;
   align-items: center;
 }
-
+.patient_list {
+  position: sticky;
+  top: 10px;
+  max-height: 82vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: none;
+}
+.sidenav_top_header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
+}
+.sidenav_items {
+  border-radius: 0 !important;
+  border: none !important;
+}
+.sidenav_items *,
+.profile_list *,
+.diagnostic_tr * {
+  border: none !important;
+}
+.sidenav_items li.active {
+  background-color: rgba(216, 252, 247, 1);
+}
 .patient-image {
   width: 50px;
   height: 50px;
@@ -65,9 +91,11 @@ body {
 
 .side_list {
   width: 250px;
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
+  /* background-color: #ffffff;
+  border: 2px solid #ffffff; */
   border-radius: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .side_list .active {
@@ -85,33 +113,138 @@ body {
 
 .card-header {
   background-color: #ffffff;
+  font-size: 24px;
+  border: none;
+  margin-bottom: 0;
 }
-.card_native{
+.card_native {
   /* Layout Properties */
 
-/* UI Properties */
-/* background: #FFE6E9 0% 0% no-repeat padding-box; */
-border-radius: 12px;
-opacity: 1;
+  /* UI Properties */
+  /* background: #FFE6E9 0% 0% no-repeat padding-box; */
+  border-radius: 12px;
+  opacity: 1;
 }
 .card-bodys {
-  background-color: #F4F0FE;
+  background-color: #f4f0fe;
+  margin: 20px 10px 10px 10px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-left: 20px;
 }
-.history_card{
+
+.card-bodyss {
+  margin-top: 0;
+}
+
+hr {
+  width: 90%;
+  margin-bottom: 0;
+}
+
+th,
+td {
+  font-size: 14px;
+}
+
+.tabs th {
+  top: 920px;
+  left: 437px;
+  width: 726px;
+  /* UI Properties */
+  background: #f6f7f8 0% 0% no-repeat padding-box;
+  /* border-radius: 24px; */
+  opacity: 1;
+  padding: 15px 20px;
+}
+
+.circle {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #e66fd2;
+  border: 1px solid blue;
+}
+
+.circles {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #8c6fe6;
+}
+
+.diagnosis_details {
+  /* overflow-x: auto; */
+}
+
+.profile-card {
+  height: 600px;
+  width: 340px;
+  padding: 0;
+  border: none;
+}
+.history_card,
+.diagnosis_details {
+  border: none;
+
   /* Layout Properties */
-/* UI Properties */
-/* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
-/* background: #FFFFFF 0% 0% no-repeat padding-box; */
-border-radius: 16px;
-opacity: 1;
+  /* UI Properties */
+  /* background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; */
+  /* background: #FFFFFF 0% 0% no-repeat padding-box; */
+  /* border-radius: 16px; */
+  /* opacity: 1; */
+}
+
+.profile-card img {
+  top: 140px;
+  left: 1299px;
+  width: 200px;
+  height: 200px;
+  /* UI Properties */
+  /* background: transparent url("img/Layer 2.png") 0% 0% no-repeat padding-box; */
+  opacity: 1;
+}
+
+.profile-card h5 {
+  font-size: 20px;
+  /* margin-left: 10px; */
+}
+
+.profile-card p {
+  font-size: 14px;
+}
+
+.profile-card img {
+  top: 120px;
+  left: 1299px;
+  /* UI Properties */
+  opacity: 1;
+}
+
+.lab_results {
+  border: none;
+  /* margin-left: 0px; */
+  margin-top: 0;
+  padding-left: 0px;
+  padding-top: 0px;
+  width: 367px;
+  height: 296px;
+  /* border-radius: 10px; */
 }
 
 .card {
   border-radius: 10px;
-  padding: 20px;
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+}
+
+.systolic {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.value {
+  font-size: 19px;
 }
 
 .icon {
@@ -121,7 +254,6 @@ opacity: 1;
 .card-title {
   font-size: 12px;
   /* margin-bottom: 10px; */
-
 }
 
 .card-text {
@@ -137,13 +269,27 @@ opacity: 1;
 }
 
 .general {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+  height: auto;
+  max-height: 83vh;
+  overflow-y: auto;
+}
+
+.patient_list::-webkit-scrollbar,
+.patient_list::-webkit-scrollbar-track,
+.general::-webkit-scrollbar,
+.general::-webkit-scrollbar-track {
+  appearance: none;
+  display: none;
 }
 
 .info {
   border-radius: 41px;
   opacity: 1;
-  background: #01F0D0 0% 0% no-repeat padding-box;
+  padding: 10px 20px;
+  font-size: 12px;
+  background: #01f0d0 0% 0% no-repeat padding-box;
+  font-weight: 600;
 }
 
 .list-group-item {
@@ -165,8 +311,45 @@ opacity: 1;
 }
 
 .icon {
-  border-radius: 50%
+  border-radius: 50%;
 }
 
+.tabs th:nth-of-type(1) {
+  border-radius: 24px 0 0 24px !important;
+}
 
+.tabs th:nth-of-type(3) {
+  border-radius: 0 24px 24px 0 !important;
+}
+.diagnostic_tr td, .card-bodys p {
+  font-size: 14px;
+}
 
+.diagnostic_tr {
+overflow-x: auto;
+width: 100%;
+}
+
+/* .card-bodys p {
+  font-size: 14px;
+} */
+
+.blood{
+  font-size: 14px;
+}
+.statuss {
+  font-size: 20px;
+}
+.iconss {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e4e7ea !important;
+}
+.list-unstyled.spec p {
+  text-align: left !important;
+}
+
+.preloader {
+  margin-top: 20px
+}

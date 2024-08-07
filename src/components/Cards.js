@@ -4,7 +4,7 @@ import '../styles.css';
 const Cards = ({ icon="icon",title='',unit='', patient, bgColor="" }) => {
   const value= patient.value;
   const level =patient.levels;
-  console.log(patient);
+  // console.log(patient);
 
     // const patient = patients[userId].diagnosis_history
   return (
@@ -14,7 +14,7 @@ const Cards = ({ icon="icon",title='',unit='', patient, bgColor="" }) => {
           <img src={icon} alt={title}/>
         </div>
         <h5 className="card-title ">{title}</h5>
-        <p className="status">{value} {unit} </p>
+        <p className="statuss manrope-unique-weight-800">{value} {unit} </p>
         <p className="status ">{level} </p>
       </div>
     </div>

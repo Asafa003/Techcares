@@ -7,9 +7,8 @@ import { MdOutlinePhone, MdOutlineLocalPhone } from "react-icons/md";
 import { BiCalendar } from "react-icons/bi";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 
-const ProfileCard = ({ patient }) => {
+const ProfileCard = () => {
   const [patients, setPatients] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -28,100 +27,136 @@ const ProfileCard = ({ patient }) => {
           }
         );
         setPatients(response.data);
-        setLoading(false);
       } catch (error) {
         setError(error);
-        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
-  if (loading) return <div>Loading...</div>;
+
   if (error) return <div>Error: {error.message}</div>;
+
+  if (patients.length === 0) return null;
+
   return (
     <div>
-      <div className="card text-center">
-        <div className="card-body">
+      <div className="card border-0 text-center mb-4">
+        <div className="card-body profile-card">
           <img
             src={patients[3].profile_picture}
             alt={patients.profile_picture}
-            className="rounded-circle mb-3"
-            style={{ width: "100px", height: "100px" }}
+            className="rounded-circle my-4"
+            style={{ width: "150px", height: "150px" }}
           />
-          <h5 className="card-title manrope-unique-weight-800 mb-4">
+          <h5 className="card-title manrope-unique-weight-800 mb-4 mx-auto">
             {patients[3].name}
           </h5>
-          <ul className="list-unstyled">
+          <ul className="list-unstyled spec ms-2">
             <li className="mb-2">
-              <BiCalendar />
-              <span className="ms-2">
-                Date Of Birth: {patients[3].date_of_birth}
-              </span>
+              <div className="d-flex justify-content-start w-100 align-items-center ms-4 p-0 m-0">
+                <div className="iconss me-2">
+                  <BiCalendar className="" />
+                </div>
+                <div className="text-left">
+                  <p className="text-left  mb-0">Date Of Birth:</p>
+                  <p className="text-left my-0 manrope-unique-weight-600">
+                    {patients[3].date_of_birth}
+                  </p>
+                </div>
+              </div>
             </li>
             <li className="mb-2">
-              <BsGenderFemale />
-              <span className="ms-2">Gender: {patients[3].gender}</span>
+              <div className="d-flex justify-content-start w-100 align-items-center ms-4">
+                <div className="iconss me-2">
+                  <BsGenderFemale className="mt-1" />
+                </div>
+                <div className="text-left">
+                  <p className="text-left mt-1 mb-0">Gender:</p>
+                  <p className="text-left my-0 manrope-unique-weight-600">
+                    {patients[3].gender}
+                  </p>
+                </div>
+              </div>
             </li>
             <li className="mb-2">
-              <MdOutlinePhone />
-              <span className="ms-2">
-                Contact Info: {patients[3].phone_number}
-              </span>
+              <div className="d-flex justify-content-start w-100 align-items-center ms-4">
+                <div className="iconss me-2">
+                  <MdOutlinePhone className="mt-1" />
+                </div>
+                <div className="text-left">
+                  <p className="text-left mt-1 mb-0"> Contact Info:</p>
+                  <p className="text-left my-0 manrope-unique-weight-600">
+                    {patients[3].phone_number}
+                  </p>
+                </div>
+              </div>
             </li>
             <li className="mb-2">
-              <MdOutlineLocalPhone />
-              <span className="ms-2">
-                Emergency Contacts: {patients[3].emergency_contact}
-              </span>
+              <div className="d-flex justify-content-start w-100 align-items-center ms-4">
+                <div className="iconss me-2">
+                  <MdOutlineLocalPhone className="mt-1" />
+                </div>
+                <div className="text-left">
+                  <p className="text-left mt-1 mb-0">Emergency Contacts:</p>
+                  <p className="text-left my-0 manrope-unique-weight-600">
+                    {patients[3].emergency_contact}
+                  </p>
+                </div>
+              </div>
             </li>
             <li className="mb-2">
-              <GoShieldCheck />
-              <span className="ms-2">
-                Insurance Provider: {patients.insurance_type}
-              </span>
+              <div className="d-flex justify-content-start w-100 align-items-center ms-4">
+                <div className="iconss me-2">
+                  <GoShieldCheck className="mt-1" />
+                </div>
+                <div className="text-left">
+                  <p className="text-left mt-1 mb-0">Insurance Provider:</p>
+                  <p className="text-left my-0 manrope-unique-weight-600">
+                    {patients[3].insurance_type}
+                  </p>
+                </div>
+              </div>
             </li>
           </ul>
-          <button className="btn info">Show All Information</button>
+          <button className="my-3 info manrope-unique-weight-800 border-0">
+            Show All Information
+          </button>
         </div>
       </div>
-      <div className="container mt-5">
-      <div className="card">
-        <div className="card-header manrope-unique-weight-800">
-          Lab Results
+      <div className="container lab_results mt-2">
+        <div className="card border-0">
+          <div className="card-header manrope-unique-weight-800">
+            Lab Results
+          </div>
+          <ul className="list-group list-group-flush profile_list">
+            <li className="list-group-item d-flex justify-content-between align-items-center manrope-unique-weight-400">
+              <span className="mr-5">{patients[3].lab_results[0]}</span>
+              <button className="btn btn-link">
+                <PiDownloadSimpleBold />
+              </button>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              {patients[3].lab_results[1]}
+              <button className="btn btn-link">
+                <PiDownloadSimpleBold />
+              </button>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              {patients[3].lab_results[2]}
+              <button className="btn btn-link">
+                <PiDownloadSimpleBold />
+              </button>
+            </li>
+            <li className="list-group-item d-flex justify-content-between align-items-center">
+              {patients[3].lab_results[3]}
+              <button className="btn btn-link">
+                <PiDownloadSimpleBold />
+              </button>
+            </li>
+          </ul>
         </div>
-        <ul className="list-group list-group-flush">
-            <li className="list-group-item d-flex justify-content-between align-items-center manrope-unique-weight-400" >
-
-            <span className="mr-5">
-            {patients[3].lab_results[0] }
-            </span>
-              <button className="btn btn-link">
-              <PiDownloadSimpleBold/>
-              </button>
-            </li>
-            <li className="list-group-item d-flex justify-content-between align-items-center" >
-            {patients[3].lab_results[1]}
-              <button className="btn btn-link">
-              <PiDownloadSimpleBold/>
-              </button>
-            </li>
-            <li className="list-group-item d-flex justify-content-between align-items-center" >
-            {patients[3].lab_results[2]}
-              <button className="btn btn-link">
-                <PiDownloadSimpleBold/>
-              </button>
-            </li>
-            <li className="list-group-item d-flex justify-content-between align-items-center" >
-            {patients[3].lab_results[3]}
-              <button className="btn btn-link">
-              <PiDownloadSimpleBold/>
-              </button>
-            </li>
-            
-        </ul>
       </div>
-    </div>
     </div>
   );
 };
