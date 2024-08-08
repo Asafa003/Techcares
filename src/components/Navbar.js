@@ -70,7 +70,7 @@ const NavBar = () => {
                   onClick={() => handleClick(navItem.link)}
                 >
                   <div
-                    className={`d-flex align-items-center p-2  ${
+                    className={`d-flex align-items-center p-2 ${
                       navItem.link === active ? "actives" : ""
                     }`}
                   >
